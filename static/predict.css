@@ -1,0 +1,144 @@
+/*CSS for login page*/
+
+.WebContainer{
+    width: 100%;
+    height: auto;
+}
+.articles{
+    width:90%; /*Takes 90% width from WebContainer*/
+    height: auto;
+    margin: auto;
+}
+
+body {
+	/* The image used */
+	/* Control the height of the image */
+    background-color:white;
+   	min-height: 380px;
+   	opacity: 4;
+    filter:blur(1px);
+    -o-filter:blur(0px);
+    -ms-filter:blur(0px);
+    -moz-filter:blur(0px);
+    -webkit-filter:blur(0px);
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index:99;
+  box-shadow:0px 0px 0px 0px #8c8c8c;
+  webkit-box-shadow:1px 1px 1px #8c8c8c;
+  moz-box-shadow:1px 1px 1px #8c8c8c;
+}
+
+.full_page1{
+    width:400px;
+    height:400px;
+    border-radius:5px;
+    background-color:white;
+    margin:0px 0px 0px 430px;
+    box-shadow:1px 1px 8px 1px black;
+}
+
+$color: #1abc9c;
+
+h1, input::-webkit-input-placeholder, button {
+  font-family: 'roboto', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  height: 90px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  padding:25px 0px 0px 0px;
+  background: darken($color, 4%);
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+}
+
+body{
+    height:auto;
+    width:auto;
+}
+
+form {
+  box-sizing: border-box;
+  width: 500px;
+  height:auto;
+  margin: auto;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+  border-radius: 3px;
+  box-shadow:1px 1px 8px 1px #A6ACAF;
+  h1 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+
+.no-outline:focus {
+      outline: none;
+}
+
+input {
+  margin: 30px 60px;
+  width: 350px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  background-color:white;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-bottom: solid 2px #184969;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $color 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: darken($color, 20%);
+  &:focus, &:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+    &::-webkit-input-placeholder {
+      color: $color;
+      font-size: 11px;
+      transform: translateY(-20px);
+      visibility: visible !important;
+    }
+  }
+}
+
+
+button {
+  border: none;
+  #background-color:white;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 230px;
+  margin-left: 60px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+  }
+}
+
+
+
+
+

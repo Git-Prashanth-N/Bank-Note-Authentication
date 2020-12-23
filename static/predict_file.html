@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Load_data</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load static %}
+<link rel ="stylesheet" href="{% static 'predict.css' %}">
+</head>
+<body >
+<!--<div class="sticky">-->
+<!--    <nav class="navbar navbar-inverse" style="width:auto; margin:0px 0px 0px 1px; box-shadow:0px 5px 0px 0px #D7DBDD;-->
+<!--    background-color:#184969; border-radius:0px;">-->
+<!--      <div class="container-fluid" style="height:60px;">-->
+<!--        <div class="navbar-header">-->
+<!--            <a class="navbar-brand" style="padding:0px 0px 0px 0px; margin:5px 0px 0px 0px;" href="#"><div style="height:50px; color:White; font-weight:bold; font-size:25px; margin:15px 0px 0px 10px;"></div></a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--</div>-->
+<br>
+<br>
+<div style="text-align:center; margin: 30px 0px 0px 0px"> Created on Wed July 2020, @author : Prashanth Noothi</div>
+<br>
+<form style="width:450px;"  method="POST" action="/predictfile/" enctype="multipart/form-data">
+  <h1 style="color:white; background-color:#FF0000; font-size:25px;">Bank Authenticator ML App</h1>
+    {% csrf_token %}
+    <input type="file" id="file" name="file">
+<!--        <input placeholder="Variance" name="variance"  id="id1" class="no-outline" type="file" required="">-->
+    <button type="submit" style="margin:0px 0px 0px 60px; font-size:14px; width:100px;" name="btnSend" >Predict</button>
+
+</form>
+<br>
+<div  id ="myTable" style="font-size:16px;">
+    {% if msg1 %}
+        <div style="text-align:center">&nbsp;{{msg1}}</div>
+    {% endif %}
+</div>
+</body>
+</html>

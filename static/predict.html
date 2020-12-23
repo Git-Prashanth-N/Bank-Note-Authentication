@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Load_data</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load static %}
+<link rel ="stylesheet" href="{% static 'predict.css' %}">
+</head>
+<body >
+<!--<div class="sticky">-->
+<!--    <nav class="navbar navbar-inverse" style="width:auto; margin:0px 0px 0px 1px; box-shadow:0px 5px 0px 0px #D7DBDD;-->
+<!--    background-color:#184969; border-radius:0px;">-->
+<!--      <div class="container-fluid" style="height:60px;">-->
+<!--        <div class="navbar-header">-->
+<!--            <a class="navbar-brand" style="padding:0px 0px 0px 0px; margin:5px 0px 0px 0px;" href="#"><div style="height:50px; color:White; font-weight:bold; font-size:25px; margin:15px 0px 0px 10px;"></div></a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--</div>-->
+<br>
+<div style="text-align:center; margin: 30px 0px 0px 0px"> Created on Wed July 2020, @author : Prashanth Noothi</div>
+<br>
+<!--<div style="font-size:30; text-align: center"> Bank Authenticator</div>-->
+<div  id ="myTable" style="font-size:16px;">
+    {% if msg1 %}
+        <div style="text-align:center; color:green">&nbsp;{{msg1}}</div>
+    {% endif %}
+    {% if msg2 %}
+        <div style="text-align:center; color:red">&nbsp;{{msg2}}</div>
+    {% endif %}
+</div>
+<form style="width:450px;"  method="POST" action="/predict/" enctype="multipart/form-data">
+  <h1 style="color:white; background-color:#FF0000; font-size:25px;">Bank Authenticator ML App</h1>
+        {% csrf_token %}
+        <input placeholder="Variance" name="variance"  id="id1" class="no-outline" autofocus="autofocus" type="text" required="">
+        <input placeholder="Skewness" name="skewness"  id="id2" class="no-outline" autofocus="autofocus" type="text" required="">
+        <input placeholder="Curtosis" name="curtosis"  id="id3" class="no-outline" autofocus="autofocus" type="text" required="">
+        <input placeholder="Entropy" name="entropy"  id="id4" class="no-outline" autofocus="autofocus" type="text" required="">
+
+      <button type="submit" style="margin:0px 0px 0px 60px; font-size:14px; width:100px;" name="btnSend" >Predict</button>
+<!--    <div style="margin:25px 0px 0px 50px; font-weight:bold;">Predicted output of Document is <span class="upload-btn-wrapper" style=" width:130px; color:red;border-bottom: solid 2px #D7DBDD;">{{predict1|safe}}</span></div>-->
+</form>
+</body>
+</html>
